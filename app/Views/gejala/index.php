@@ -132,6 +132,7 @@
                             <?php endif; ?>
                         </div>
                     </div>
+                    <img src="<?= base_url('assets/img/gejala/' . $gejala->gejala_foto) ?>" alt="" class="img-thumbnail">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -140,5 +141,6 @@
                 <?= form_close() ?>
             </div>
         </div>
-    <?php endforeach; ?>
-    <?= $this->endSection(); ?>
+    </div>
+<?php endforeach; ?>
+<?= $this->endSection(); ?>
