@@ -36,6 +36,7 @@
             <p class="ms-0">
                 Tanggal Diagnosa : <?= $diagnosa->diagnosa_tgl ?>
             </p>
+
             <!-- Your Content Here -->
             <table id="" class="table table-striped table-bordered" style="width:100%">
                 <thead>
@@ -62,6 +63,9 @@
                 <h6>Saran Penanganan/Pencegahan :</h6>
                 <p><?= $penyakit->penyakit_solusi ?></p>
             <?php endif ?>
+            <div class="d-flex justify-content-end">
+                <a href="<?= base_url(type() . '/diagnosa/' . $diagnosa->diagnosa_id . '/cetak') ?>" class="btn btn-primary"> <i class="bx bx-printer"></i> Cetak</a>
+            </div>
         </div>
     </div>
 </div>

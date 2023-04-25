@@ -97,6 +97,14 @@
                         <div class="menu-title">Data Diagnosa</div>
                     </a>
                 </li>
+                <li class="menu-label">Lainnya</li>
+                <li>
+                    <a href="<?= base_url('admin/berita') ?>">
+                        <div class="parent-icon"><i class="bx bx-news"></i>
+                        </div>
+                        <div class="menu-title">Berita</div>
+                    </a>
+                </li>
             </ul>
             <!--end navigation-->
         </div>
@@ -210,12 +218,14 @@
     <script src="<?= base_url() ?>/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
     <script src="<?= base_url() ?>/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+    <script src="<?= base_url() ?>/assets/plugins/ckeditor/ckeditor.js"></script>
     <!--app JS-->
     <?= $this->renderSection('scripts'); ?>
     <script>
         $(document).ready(function() {
             $('#example').DataTable();
         });
+        CKEDITOR.replace('editor1');
     </script>
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 

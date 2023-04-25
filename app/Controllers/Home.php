@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\BeritaModel;
 use App\Models\DiagnosaModel;
 use App\Models\PakarModel;
 use App\Models\PenyakitModel;
@@ -45,10 +46,13 @@ class Home extends BaseController
         $model = new DiagnosaModel();
         $diagnosa = $model->getForDashboard(petani()->petani_id);
         $petani = petani();
+        $model = new BeritaModel();
+        $berita = $model->findHighlight();
         $data = [
             'title' => 'Dashboard',
             'diagnosa' => $diagnosa,
-            'petani' => $petani
+            'petani' => $petani,
+            'berita' => $berita
         ];
         return view('dashboard/petani', $data);
     }

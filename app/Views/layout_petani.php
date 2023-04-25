@@ -27,7 +27,7 @@
     <title><?= $title ?> | Dabalulik</title>
 </head>
 
-<body>
+<body style="<?= ($title == 'Dashboard') ? "background-image: url(" . base_url('assets/images/bg.png') . ");" : '' ?>">
     <!--wrapper-->
     <div class="wrapper">
         <!--start header -->
@@ -122,6 +122,13 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
+                        <a href="<?= base_url('petani/berita') ?>" class="nav-link">
+                            <div class="parent-icon"><i class="bx bx-news"></i>
+                            </div>
+                            <div class="menu-title">Berita</div>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
                         <a href="<?= base_url('petani/penyakit') ?>" class="nav-link">
                             <div class="parent-icon"><i class="bx bx-category"></i>
                             </div>
@@ -133,6 +140,13 @@
                             <div class="parent-icon"><i class="bx bx-brain"></i>
                             </div>
                             <div class="menu-title">Diagnosa</div>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="<?= base_url('petani/profil') ?>" class="nav-link">
+                            <div class="parent-icon"><i class="bx bx-user"></i>
+                            </div>
+                            <div class="menu-title">Profil</div>
                         </a>
                     </li>
                 </ul>

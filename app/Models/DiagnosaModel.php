@@ -56,6 +56,13 @@ class DiagnosaModel extends Model
         return $this->find();
     }
 
+    public function findOne($diagnosa_id)
+    {
+        $this->where('diagnosa_id', $diagnosa_id);
+        $this->join('petani', 'petani.petani_id = diagnosa.petani_id');
+        return $this->first();
+    }
+
     public function getForDashboard($petani_id)
     {
         $this->where('diagnosa.petani_id', $petani_id);

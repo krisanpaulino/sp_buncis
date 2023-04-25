@@ -2,11 +2,14 @@
 
 namespace App\Controllers;
 
+// require_once '../Libraries/PDFGenerator.php';
+
 use App\Controllers\BaseController;
 use App\Models\DetailDiagnosaModel;
 use App\Models\DiagnosaModel;
 use App\Models\PenyakitModel;
 use App\Models\PetagejalaModel;
+use App\Libraries\Pdfgenerator;
 
 class Diagnosa extends BaseController
 {
@@ -131,7 +134,33 @@ class Diagnosa extends BaseController
 
         return view('diagnosa/detail', $data);
     }
+    public function cetakHasil($diagnosa_id)
+    {
+        $model = new DiagnosaModel();
+        $diagnosa = $model->findOne($diagnosa_id);
+        $model = new DetailDiagnosaModel();
+        $detaildiagnosa = $model->findDetail($diagnosa_id);
+        $model = new PenyakitModel();
+        $penyakit = $model->find($diagnosa->diagnosa_deskripsi);
+        $data = [
+            'title' => 'Hasil Diagnosa',
+            'diagnosa' => $diagnosa,
+            'detaildiagnosa' => $detaildiagnosa,
+            'penyakit' => $penyakit
+        ];
 
+        $file_pdf = 'laporan_diagbnosa';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "portrait";
+
+        $html = view('diagnosa/detailpdf', $data);
+
+        // run dompdf
+        $pdf = new Pdfgenerator();
+        $pdf->generate($html, $file_pdf, $paper, $orientation);
+    }
     public function delete()
     {
         $diagnosa_id = $this->request->getPost('diagnosa_id');

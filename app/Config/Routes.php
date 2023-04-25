@@ -48,6 +48,7 @@ $routes->group('petani', static function ($routes) {
     $routes->get('diagnosa/mulai', 'Diagnosa::mulai');
     $routes->get('diagnosa/proses/(:num)', 'Diagnosa::proses/$1');
     $routes->get('diagnosa/(:num)', 'Diagnosa::hasil/$1');
+    $routes->get('diagnosa/(:num)/cetak', 'Diagnosa::cetakHasil/$1');
     $routes->post('diagnosa/proses/(:num)', 'Diagnosa::proses/$1');
     $routes->post('diagnosa/create-diagnosa', 'Diagnosa::createDiagnosa');
     $routes->post('diagnosa/delete', 'Diagnosa::delete');
@@ -59,6 +60,9 @@ $routes->group('petani', static function ($routes) {
 
     $routes->post('profil/update', 'Petani::update');
     $routes->post('profil/reset-password', 'Petani::resetPassword');
+
+    $routes->get('berita/', 'Berita::index');
+    $routes->get('berita/(:num)', 'Berita::detailPetani/$1');
 });
 $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
     $routes->get('/', 'Home::admin');
@@ -97,6 +101,13 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
 
     $routes->get('diagnosa', 'Diagnosa::indexAdmin');
     $routes->get('diagnosa/(:num)', 'Diagnosa::hasil/$1');
+
+    $routes->get('berita', 'Berita::index');
+    $routes->get('berita/tambah', 'Berita::tambah');
+    $routes->post('berita/store', 'Berita::store');
+    $routes->post('berita/update', 'Berita::update');
+    $routes->post('berita/delete', 'Berita::delete');
+    $routes->get('berita/(:num)', 'Berita::detail/$1');
 });
 $routes->group('pakar', ['filter' => 'pakar'], static function ($routes) {
     $routes->get('/', 'Home::pakar');
