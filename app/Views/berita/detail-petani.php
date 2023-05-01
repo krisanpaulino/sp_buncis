@@ -3,18 +3,19 @@
 <div class="page-content">
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3"><?= $title ?></div>
-        <div class="ps-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item"><a href="<?= base_url('petani') ?>"><i class="bx bx-home-alt"></i></a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="<?= base_url('petani/berita') ?>">Berita</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page"><?= $berita->berita_judul ?></li>
-                </ol>
-            </nav>
-        </div>
+        <?php if ($berita->berita_highlight == 0) : ?>
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item"><a href="<?= base_url('petani') ?>"><i class="bx bx-home-alt"></i></a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('petani/berita') ?>">Berita</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $berita->berita_judul ?></li>
+                    </ol>
+                </nav>
+            </div>
+        <?php endif ?>
     </div>
     <!--end breadcrumb-->
     <div class="text-center mb-4">

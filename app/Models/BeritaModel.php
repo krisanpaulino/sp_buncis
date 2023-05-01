@@ -55,4 +55,9 @@ class BeritaModel extends Model
         $this->where('berita_highlight', 1);
         return $this->find();
     }
+    public function nonHighlight()
+    {
+        $this->where('berita_highlight !=', 1, true);
+        return $this->find();
+    }
 }

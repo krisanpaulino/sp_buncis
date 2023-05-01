@@ -66,7 +66,7 @@
                 <div class="form-check mb-4">
                     <input class="form-check-input" type="checkbox" name="berita_highlight" value="1" id="flexCheckDefault" <?= ($berita->berita_highlight == 1) ? 'checked' : '' ?>>
                     <label class="form-check-label" for="flexCheckDefault">
-                        Highlight
+                        Informasi (Hanya Tampil Di Dashboard)
                     </label>
                 </div>
                 <div class="form-group">

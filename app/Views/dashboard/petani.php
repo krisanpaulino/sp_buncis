@@ -18,10 +18,76 @@
     <!-- <div class="d-flex justify-content-center"> -->
     <div class="row d-flex justify-content-center mb-4">
         <div class="col-md-12 text-center">
-            <h2 class="">SELAMAT DATANG DI SISTEM PAKAR DIAGNOSA PENYAKIT TANAMAN BUNCIS <br> KELOMPOK TANI DABALULIK</h2>
-            <h5 class="">
-                Arti dari <b>Dabalulik</b> yaitu Daba artinya Kusambi, Lulik artinya Pemali. Tanaman yang sering di tanam oleh Kelompok Tani Dabalulik ada bermacam-macam tanaman yaitu buncis,kacang panjang, tomat dan mentimun. Tanaman buncis yang sering di serang oleh penyakit di Kelompok Tani Dabalulik yaitu penyakit Layu, bercak daun, busuk lunak, karat dan ujung keriting. dengan adanya aplikasi ini bisah membantu para petani untuk memberikan solusi untuk mengatasi penyakit pada tanaman buncis dengan baik.
-            </h5>
+            <div class="">
+                <div class="">
+                    <!--container-->
+                    <div class="container py-2">
+                        <h2 class="font-weight-light text-center text-muted py-3">SELAMAT DATANG DI SISTEM PAKAR DIAGNOSA PENYAKIT TANAMAN BUNCIS <br><span class="text-primary"> KELOMPOK TANI DABALULIK</span></h2>
+                        <!-- timeline item 1 -->
+                        <div class="row g-0">
+                            <div class="col-sm">
+                                <!--spacer-->
+                            </div>
+                            <!-- timeline item 1 center dot -->
+                            <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+                                <div class="row h-50">
+                                    <div class="col">&nbsp;</div>
+                                    <div class="col">&nbsp;</div>
+                                </div>
+                                <h5 class="m-2">
+                                    <span class="badge rounded-pill bg-primary border">&nbsp;</span>
+                                </h5>
+                                <div class="row h-50">
+                                    <div class="col border-end border-primary">&nbsp;</div>
+                                    <div class="col">&nbsp;</div>
+                                </div>
+                            </div>
+                            <!-- timeline item 1 event content -->
+                            <div class="col-sm py-2">
+                                <div class="card radius-15">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-muted">Dabalulik</h4>
+                                        <p class="card-text">Kelompok Tani Dabalulik Tempatnya Di Nusa Tengara Timur, Kabupaten Belu,Kecamatan Kakulu Mesak,Desa Kabuna. Arti dari <b>Dabalulik</b> yaitu Daba artinya Kusambi, Lulik artinya Pemali. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/row-->
+                        <!-- timeline item 2 -->
+                        <div class="row g-0">
+                            <div class="col-sm py-2">
+                                <div class="card shadow radius-15">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-muted">Tanaman Di Kelompok Tani Dabalulik</h4>
+                                        <p class="card-text">Tanaman yang sering di tanam oleh kelompok tani dabalulik ada bermacam-macam tanaman yaitu :</p>
+                                        <div>Buncis</div>
+                                        <div>Kacang Panjang</div>
+                                        <div>Tomat</div>
+                                        <div>Mentimun</div>
+                                        <!-- <div class="collapse border show" id="t22_details">
+                                            <div class="p-2 text-monospace">
+
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+                                <div class="row h-50">
+                                    <div class="col border-end border-primary">&nbsp;</div>
+                                    <div class="col">&nbsp;</div>
+                                </div>
+                                <h5 class="m-2">
+                                    <span class="badge rounded-pill bg-primary">&nbsp;</span>
+                                </h5>
+                            </div>
+                            <div class="col-sm">
+                                <!--spacer-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- </div> -->
@@ -73,7 +139,7 @@
 
     </div> -->
     <div class="row text-center">
-        <h1>Informasi</h1>
+        <h2 class="font-weight-light text-center py-3">INFORMASI</h2>
     </div>
     <div class="row d-flex justify-content-center">
         <?php foreach ($berita as $b) : ?>

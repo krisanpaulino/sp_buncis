@@ -33,11 +33,15 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <img src="<?= base_url('assets/img/profile/' . $b->berita_thumbnail) ?>" alt="" style="width: 30%;" class="img-thumbnail">
-                            <div>
-                                <h5 class="card-title"><?= $b->berita_judul ?></h5>
-                                <span class="text-muted"><?= $b->berita_tgl ?></span>
-                                <p class="card-text"><?= substr($b->berita_isi, 0, 100) ?> ...</p> <a href="<?= base_url('petani/berita/' . $b->berita_id) ?>" class="text-primary">Lihat Selengkapnya >></a>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="<?= base_url('assets/img/profile/' . $b->berita_thumbnail) ?>" alt="" style="width: 100%;" class="img-thumbnail">
+                                </div>
+                                <div class="col-8">
+                                    <h5 class="card-title"><?= $b->berita_judul ?></h5>
+                                    <span class="text-muted"><?= $b->berita_tgl ?></span>
+                                    <p class="card-text"><?= substr($b->berita_isi, 0, 100) ?> ...</p> <a href="<?= base_url('petani/berita/' . $b->berita_id) ?>" class="text-primary">Lihat Selengkapnya >></a>
+                                </div>
                             </div>
                         </div>
 

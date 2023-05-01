@@ -61,7 +61,7 @@ $routes->group('petani', static function ($routes) {
     $routes->post('profil/update', 'Petani::update');
     $routes->post('profil/reset-password', 'Petani::resetPassword');
 
-    $routes->get('berita/', 'Berita::index');
+    $routes->get('berita/', 'Berita::indexPetani');
     $routes->get('berita/(:num)', 'Berita::detailPetani/$1');
 });
 $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
@@ -91,6 +91,7 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
     $routes->get('penyakit/(:any)', 'Penyakit::detail/$1');
     $routes->post('penyakit/store', 'Penyakit::store');
     $routes->post('penyakit/store-gejala', 'Penyakit::storeGejala');
+    $routes->post('penyakit/delete-gejala', 'Penyakit::deleteGejala');
     $routes->post('penyakit/update', 'Penyakit::update');
     $routes->post('penyakit/delete', 'Penyakit::delete');
 
@@ -118,6 +119,7 @@ $routes->group('pakar', ['filter' => 'pakar'], static function ($routes) {
     $routes->get('penyakit/(:any)', 'Penyakit::detail/$1');
     $routes->post('penyakit/store', 'Penyakit::store');
     $routes->post('penyakit/store-gejala', 'Penyakit::storeGejala');
+    $routes->post('penyakit/delete-gejala', 'Penyakit::deleteGejala');
     $routes->post('penyakit/update', 'Penyakit::update');
     $routes->post('penyakit/delete', 'Penyakit::delete');
 

@@ -52,7 +52,7 @@
                                 <td><?= $i++ ?></td>
                                 <td><?= $gejala->gejala_nama ?></td>
                                 <td>
-                                    <form action="<?= base_url(session('user')->user_type . '/penyakit/deletegejala') ?>" method="post">
+                                    <form action="<?= base_url(session('user')->user_type . '/penyakit/delete-gejala') ?>" method="post">
                                         <input type="hidden" name="petagejala_id" value="<?= $gejala->petagejala_id ?>">
                                         <button type="submit" onclick="return confirm('Apakah anda yakin ingin menghapus gejala dari penyakit?')" class="badge bg-danger border">Hapus</button>
                                     </form>

@@ -19,6 +19,18 @@ class Berita extends BaseController
 
         return view('berita/index-' . type(), $data);
     }
+    public function indexPetani()
+    {
+        $model = new BeritaModel();
+        $berita = $model->nonHighlight();
+
+        $data = [
+            'title' => 'Berita',
+            'berita' => $berita
+        ];
+
+        return view('berita/index-' . type(), $data);
+    }
 
     public function tambah()
     {
