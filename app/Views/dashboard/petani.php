@@ -47,7 +47,7 @@
                                 <div class="card radius-15">
                                     <div class="card-body">
                                         <h4 class="card-title text-muted">Dabalulik</h4>
-                                        <p class="card-text">Kelompok Tani Dabalulik Tempatnya Di Nusa Tengara Timur, Kabupaten Belu,Kecamatan Kakulu Mesak,Desa Kabuna. Arti dari <b>Dabalulik</b> yaitu Daba artinya Kusambi, Lulik artinya Pemali. </p>
+                                        <p class="card-text">Kelompok Tani Dabalulik Tempatnya Di Nusa Tengara Timur, Kabupaten Belu,Kecamatan Kakulu Mesak,Desa Kabuna.</p>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
 
     </div> -->
     <div class="row text-center">
-        <h2 class="font-weight-light text-center py-3">INFORMASI</h2>
+        <h2 class="font-weight-light text-center py-3">INFORMASI DI KELOMPOK TANI DABALULIK</h2>
     </div>
     <div class="row d-flex justify-content-center">
         <?php foreach ($berita as $b) : ?>
