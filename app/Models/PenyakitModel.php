@@ -52,7 +52,7 @@ class PenyakitModel extends Model
     public function getPenyakitByAnswer($ya, $tidak)
     {
 
-        $this->select('penyakit.*');
+        $this->select('DISTINCT penyakit.*');
         $this->join('petagejala', 'petagejala.penyakit_kode = penyakit.penyakit_kode');
         $this->join('gejala', 'petagejala.gejala_kode = gejala.gejala_kode');
         // dd($tidak);
@@ -62,6 +62,7 @@ class PenyakitModel extends Model
             // $tidak = implode(',', $tidak);
             $this->whereNotIn('petagejala.gejala_kode', $tidak);
         }
+        $this->groupBy('penyakit.id');
         return $this->find();
     }
     public function findCount()
