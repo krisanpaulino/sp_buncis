@@ -97,7 +97,14 @@ class Diagnosa extends BaseController
         //Lanjut.
         //cari gejala berikut berdasarkan '$jawaban_gejala. Tampilkan yang belum ditanya.
         $model = new PetagejalaModel();
-        $gejala = $model->findNextGejala($penyakit->penyakit_kode, getGejalaID($jawaban_gejala));
+        $gejala = null;
+        foreach ($penyakit as $p) {
+            $gejala = $model->findNextGejala($p->penyakit_kode, getGejalaID($jawaban_gejala));
+            if ($gejala != null) {
+                $penyakit = $p;
+                break;
+            }
+        }
 
         //Kalau Sudah tidak ada gejala lagi berarti sudah dapat penyakit.
         //redirect ke halaman hasil.

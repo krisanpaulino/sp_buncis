@@ -62,7 +62,7 @@ class PenyakitModel extends Model
             // $tidak = implode(',', $tidak);
             $this->whereNotIn('petagejala.gejala_kode', $tidak);
         }
-        return $this->first();
+        return $this->find();
     }
     public function findCount()
     {
