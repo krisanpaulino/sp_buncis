@@ -59,8 +59,8 @@ class PenyakitModel extends Model
         if ($ya != null)
             $this->whereIn('petagejala.gejala_kode', $ya);
         if ($tidak != null) {
-            // $tidak = implode(',', $tidak);
-            $this->whereNotIn('petagejala.gejala_kode', $tidak);
+            $tidak = implode(',', $tidak);
+            $this->where("NOT EXISTS(SELECT * FROM petagejala a where a.penyakit_kode = penyakit.penyakit_kode AND a.gejala_kode IN ($tidak))", null, false);
         }
         if ($penyakit_kode != null) {
             $this->whereNotIn('penyakit.penyakit_kode', $penyakit_kode);
