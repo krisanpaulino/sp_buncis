@@ -34,7 +34,7 @@ class Penyakit extends BaseController
         $file = $this->request->getFile('file');
         if ($penyakit_id = $model->insert($data)) {
             if (!empty($file) && $file->isValid()) {
-                dd($penyakit_id);
+                // dd($penyakit_id);
                 $filename = 'penyakit' . $penyakit_id . '.' . $file->getExtension();
                 $path = './assets/img/penyakit';
                 if ($file->move($path, $filename, true)) {
