@@ -42,7 +42,7 @@ $routes->group('auth', static function ($routes) {
     $routes->post('login', 'Auth::login');
     $routes->post('logout', 'Auth::logout');
 });
-$routes->group('petani', static function ($routes) {
+$routes->group('petani', ['filter' => 'petani'], static function ($routes) {
     $routes->get('/', 'Home::petani');
     $routes->get('diagnosa', 'Diagnosa::index');
     $routes->get('diagnosa/mulai', 'Diagnosa::mulai');

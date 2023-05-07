@@ -49,10 +49,10 @@ class PenyakitModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getPenyakitByAnswer($ya, $tidak)
+    public function getPenyakitByAnswer($ya, $tidak, $penyakit_kode = null, $jumlahgejala = null)
     {
 
-        $this->select('DISTINCT penyakit.*');
+        $this->select('penyakit.*, count(petagejala.petagejala_id) as jumlahgejala');
         $this->join('petagejala', 'petagejala.penyakit_kode = penyakit.penyakit_kode');
         $this->join('gejala', 'petagejala.gejala_kode = gejala.gejala_kode');
         // dd($tidak);
@@ -62,8 +62,15 @@ class PenyakitModel extends Model
             // $tidak = implode(',', $tidak);
             $this->whereNotIn('petagejala.gejala_kode', $tidak);
         }
-        $this->groupBy('penyakit.id');
-        return $this->find();
+        if ($penyakit_kode != null) {
+            $this->whereNotIn('penyakit.penyakit_kode', $penyakit_kode);
+        }
+        $this->groupBy('penyakit.penyakit_kode');
+        if ($jumlahgejala != null)
+            $this->having('jumlahgejala >=', $jumlahgejala, false);
+        $this->orderBy('jumlahgejala', 'desc');
+        // dd($this->builder->getCompiledSelect());
+        return $this->first();
     }
     public function findCount()
     {

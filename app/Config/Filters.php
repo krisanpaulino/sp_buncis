@@ -4,6 +4,7 @@ namespace Config;
 
 use App\Filters\AdminFilter;
 use App\Filters\PakarFilter;
+use App\Filters\PetaniFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -27,6 +28,7 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'admin' => AdminFilter::class,
         'pakar' => PakarFilter::class,
+        'petani' => PetaniFilter::class
     ];
 
     /**
