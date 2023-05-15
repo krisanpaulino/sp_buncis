@@ -68,7 +68,9 @@ class PenyakitModel extends Model
         $this->groupBy('penyakit.penyakit_kode');
         if ($jumlahgejala != null)
             $this->having('jumlahgejala >=', $jumlahgejala, false);
-        $this->orderBy('jumlahgejala', 'desc');
+        if ($ya != null || $tidak != null)
+            $this->orderBy('jumlahgejala', 'desc');
+        $this->orderBy('penyakit.penyakit_kode', 'asc');
         // dd($this->builder->getCompiledSelect());
         return $this->first();
     }
