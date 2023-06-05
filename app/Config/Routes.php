@@ -54,6 +54,7 @@ $routes->group('petani', ['filter' => 'petani'], static function ($routes) {
     $routes->post('diagnosa/delete', 'Diagnosa::delete');
 
     $routes->get('penyakit', 'Penyakit::showPetani');
+    $routes->get('penyakit/(:num)', 'Penyakit::detailPetani/$1');
     $routes->get('petani', 'Petani::index');
 
     $routes->get('profil', 'Petani::profil');

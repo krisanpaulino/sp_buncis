@@ -99,6 +99,7 @@ class Penyakit extends BaseController
         return view('penyakit/form', $data);
     }
 
+
     public function delete()
     {
         $penyakit_kode = $this->request->getPost('penyakit_kode');

@@ -27,19 +27,20 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <?php endif ?>
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
-        <?php foreach ($data_penyakit as $penyakit) : ?>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div>
-                            <h5 class="card-title"><?= $penyakit->penyakit_nama ?></h5>
-                        </div>
-                        <p class="card-text"><?= substr($penyakit->penyakit_detail, 0, 100) ?> ...</p> <a href="<?= base_url('petani/penyakit/' . $penyakit->penyakit_kode) ?>" class="text-primary">Lihat Selengkapnya >></a>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title"><?= $penyakit->penyakit_nama ?></h5>
                     </div>
+                    <img src="<?= base_url('assets/img/penyakit/' . $penyakit->penyakit_foto) ?>" alt="" class="img-fluid">
+                    <?= $penyakit->penyakit_detail ?>
+                    <h5>Solusi</h5>
+                    <?= $penyakit->penyakit_solusi ?>
                 </div>
             </div>
-        <?php endforeach; ?>
+        </div>
 
     </div>
 </div>
