@@ -75,4 +75,27 @@ class DiagnosaModel extends Model
         $this->select('count(*) as jumlah');
         return $this->first()->jumlah;
     }
+    public function findRekapan($tgldari, $tglsampai)
+    {
+        $this->select('penyakit.*, count(diagnosa_id) as jumlah, diagnosa_deskripsi', true);
+        $this->join('penyakit', 'penyakit_kode = diagnosa_deskripsi', 'left');
+        if ($tgldari != null)
+            $this->where('diagnosa_tgl >=', $tgldari, true);
+        if ($tglsampai != null)
+            $this->where('diagnosa_tgl <=', $tglsampai, true);
+        $this->groupBy('diagnosa_deskripsi');
+        // dd($this->builder()->getCompiledSelect());
+        return $this->find();
+    }
+
+    public function getSum($tgldari, $tglsampai)
+    {
+        $this->selectCount('diagnosa_id', 'jumlah');
+        if ($tgldari != null)
+            $this->where('diagnosa_tgl >=', $tgldari, true);
+        if ($tglsampai != null)
+            $this->where('diagnosa_tgl <=', $tglsampai, true);
+        // dd($this->builder()->getCompiledSelect());
+        return $this->first();
+    }
 }

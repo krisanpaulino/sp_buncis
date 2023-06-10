@@ -167,7 +167,7 @@ class Diagnosa extends BaseController
             'penyakit' => $penyakit
         ];
 
-        $file_pdf = 'laporan_diagbnosa';
+        $file_pdf = 'laporan_diagnosa';
         // setting paper
         $paper = 'A4';
         //orientasi paper potrait / landscape
@@ -188,5 +188,53 @@ class Diagnosa extends BaseController
 
         return redirect()->back()
             ->with('success', 'Berhasil hapus!');
+    }
+
+    public function rekapanDiagnosa()
+    {
+        $tgldari = $this->request->getPost('tgldari');
+        $tglsampai = $this->request->getPost('tglsampai');
+        // dd($this->request->getPost());
+        $model = new DiagnosaModel();
+        $diagnosa = $model->findRekapan($tgldari, $tglsampai);
+        $jumlah = $model->getSum($tgldari, $tglsampai);
+
+        $data = [
+            'title' => 'Rekapan Diagnosa',
+            'diagnosa' => $diagnosa,
+            'tgldari' => $tgldari,
+            'tglsampai' => $tglsampai,
+            'jumlah' => $jumlah,
+        ];
+
+        return view('diagnosa/rekap-diagnosa', $data);
+    }
+    public function cetakRekapan()
+    {
+        $tgldari = $this->request->getPost('tgldari');
+        $tglsampai = $this->request->getPost('tglsampai');
+        // dd($this->request->getPost());
+        $model = new DiagnosaModel();
+        $diagnosa = $model->findRekapan($tgldari, $tglsampai);
+        $jumlah = $model->getSum($tgldari, $tglsampai);
+
+        $data = [
+            'title' => 'Rekapan Diagnosa',
+            'diagnosa' => $diagnosa,
+            'tgldari' => $tgldari,
+            'tglsampai' => $tglsampai,
+            'jumlah' => $jumlah,
+        ];
+        $file_pdf = 'laporan_rekap_diagnosa';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "portrait";
+
+        $html = view('diagnosa/rekapan-pdf', $data);
+
+        // run dompdf
+        $pdf = new Pdfgenerator();
+        $pdf->generate($html, $file_pdf, $paper, $orientation);
     }
 }

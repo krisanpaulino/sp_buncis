@@ -97,6 +97,13 @@
                         <div class="menu-title">Data Diagnosa</div>
                     </a>
                 </li>
+                <li>
+                    <a href="<?= base_url('admin/diagnosa/rekapan') ?>">
+                        <div class="parent-icon"><i class="bx bx-file"></i>
+                        </div>
+                        <div class="menu-title">Rekapan Diagnosa</div>
+                    </a>
+                </li>
                 <li class="menu-label">Lainnya</li>
                 <li>
                     <a href="<?= base_url('admin/berita') ?>">

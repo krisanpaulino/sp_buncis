@@ -102,6 +102,9 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
     $routes->post('gejala/delete', 'Gejala::delete');
 
     $routes->get('diagnosa', 'Diagnosa::indexAdmin');
+    $routes->get('diagnosa/rekapan', 'Diagnosa::rekapanDiagnosa');
+    $routes->post('diagnosa/rekapan', 'Diagnosa::rekapanDiagnosa');
+    $routes->get('diagnosa/cetak-rekapan', 'Diagnosa::cetakRekapan');
     $routes->get('diagnosa/(:num)', 'Diagnosa::hasil/$1');
 
     $routes->get('berita', 'Berita::index');
