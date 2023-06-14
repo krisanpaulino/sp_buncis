@@ -60,7 +60,7 @@
                         <tr>
                             <th>Nama Penyakit</th>
                             <th>Jumlah Diagnosa</th>
-                            <th>Presentase</th>
+                            <!-- <th>Presentase</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -74,7 +74,7 @@
                                     <td><?= $diag->penyakit_nama ?></td>
                                 <?php endif; ?>
                                 <td><?= $diag->jumlah ?></td>
-                                <td><?= $diag->jumlah / $jumlah->jumlah * 100 ?>%</td>
+                                <!-- <td><?= $diag->jumlah / $jumlah->jumlah * 100 ?>%</td> -->
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
