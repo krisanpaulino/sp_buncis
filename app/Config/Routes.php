@@ -106,6 +106,7 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
     $routes->post('diagnosa/rekapan', 'Diagnosa::rekapanDiagnosa');
     $routes->get('diagnosa/cetak-rekapan', 'Diagnosa::cetakRekapan');
     $routes->get('diagnosa/(:num)', 'Diagnosa::hasil/$1');
+    $routes->get('diagnosa/(:num)/cetak', 'Diagnosa::cetakHasil/$1');
 
     $routes->get('berita', 'Berita::index');
     $routes->get('berita/tambah', 'Berita::tambah');
@@ -126,6 +127,7 @@ $routes->group('pakar', ['filter' => 'pakar'], static function ($routes) {
     $routes->post('penyakit/delete-gejala', 'Penyakit::deleteGejala');
     $routes->post('penyakit/update', 'Penyakit::update');
     $routes->post('penyakit/delete', 'Penyakit::delete');
+    $routes->get('diagnosa/(:num)/cetak', 'Diagnosa::cetakHasil/$1');
 
     $routes->get('gejala', 'Gejala::index');
     $routes->post('gejala/store', 'Gejala::store');
