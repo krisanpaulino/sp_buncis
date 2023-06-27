@@ -82,7 +82,8 @@ class Diagnosa extends BaseController
 
         //Cari Penyakit Berdasarkan Jawaban
         $model = new PenyakitModel();
-        $penyakit = $model->getPenyakitByAnswer(getGejalaID($gejala_ya), getGejalaID($gejala_tidak));
+        // $penyakit = $model->getPenyakitByAnswer(getGejalaID($gejala_ya), getGejalaID($gejala_tidak));
+        $penyakit = $model->getPenyakitByAnswer(getGejalaID($gejala_ya), null);
         // dd($penyakit);
         //kalau penyakit tidak ada lagi maka proses berhenti karena tidak ada penyakit.
         if (empty($penyakit)) {
