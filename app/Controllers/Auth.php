@@ -77,4 +77,10 @@ class Auth extends BaseController
         session()->destroy();
         return redirect()->to('auth');
     }
+
+    public function signup()
+    {
+        $data['title'] = 'Registrasi Petani';
+        return view('signup_petani', $data);
+    }
 }

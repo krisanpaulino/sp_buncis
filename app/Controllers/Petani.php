@@ -28,8 +28,8 @@ class Petani extends BaseController
         $model = new UserModel();
         $data = [
             'user_email' => $this->request->getPost('user_email'),
-            'user_password' => 'qwerty123',
-            'password_confirmation' => 'qwerty123',
+            'user_password' => $this->request->getPost('user_password'),
+            'password_confirmation' => $this->request->getPost('password_confirmation'),
             'user_type' => 'petani'
         ];
 
@@ -47,7 +47,7 @@ class Petani extends BaseController
                 }
             }
             if ($model->insert($data)) {
-                return redirect()->to(previous_url())
+                return redirect()->to('auth')
                     ->with('success', 'Data berhasil disimpan!');
             } else {
                 $errors = $model->errors();

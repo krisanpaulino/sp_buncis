@@ -44,6 +44,7 @@
                                 <div class="border p-4 rounded">
                                     <div class="text-center">
                                         <h3 class="text-primary">SISTEM PAKAR DIAGNOSA PENYAKIT TANAMAN BUNCIS</h3>
+                                        <p>Belum Ada Akun? <a href="<?= base_url('auth/signup') ?>">Daftar disini</a>
                                     </div>
                                     <div class="login-separater text-center mb-4"> <span>LOGIN</span>
                                         <hr />

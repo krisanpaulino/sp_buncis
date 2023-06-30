@@ -41,6 +41,8 @@ $routes->group('auth', static function ($routes) {
     $routes->get('/', 'Auth::index');
     $routes->post('login', 'Auth::login');
     $routes->post('logout', 'Auth::logout');
+    $routes->post('signup', 'Petani::store');
+    $routes->get('signup', 'Auth::signup');
 });
 $routes->group('petani', ['filter' => 'petani'], static function ($routes) {
     $routes->get('/', 'Home::petani');
