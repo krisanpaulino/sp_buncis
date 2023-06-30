@@ -14,7 +14,7 @@
             </nav>
         </div>
         <div class="ms-auto">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form">Tambah</button>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form">Tambah</button> -->
             <!-- Modal -->
             <div class="modal fade" id="form" tabindex="-1" aria-labelledby="formLabel" aria-hidden="true">
                 <div class="modal-dialog">
