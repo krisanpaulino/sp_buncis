@@ -106,7 +106,7 @@
 											</div>
 											<div class="form-group mb-4">
 												<label for="petani_hp">No. HP</label>
-												<input type="text" class="form-control <?= (isset(session('errors')['petani_hp'])) ? 'is-invalid' : '' ?>" id="petani_hp" name="petani_hp" value="<?= old('petani_hp') ?>">
+												<input type="number" class="form-control <?= (isset(session('errors')['petani_hp'])) ? 'is-invalid' : '' ?>" id="petani_hp" name="petani_hp" value="<?= old('petani_hp') ?>">
 												<div class="invalid-feedback">
 													<?php if (isset(session('errors')['petani_hp'])) : ?>
 														<?= session('errors')['petani_hp'] ?>
